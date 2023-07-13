@@ -29,7 +29,7 @@ const createTicket = async (userId, ticket) => {
   return null;
 };
 
-module.exports = { createUser, getUser, createTicket, validateUser };
+module.exports = { createUser, getUser, createTicket, validateUser};
 
 
 

@@ -21,6 +21,7 @@ const getUser = async (req, res) => {
     res.status(500).json({ action: "getUser", error: err.message });
   }
 };
+
 const createTicket = async (req, res) => {
   try {
     const user = await userService.createTicket(req.params.userId, req.body);
@@ -34,7 +35,8 @@ const createTicket = async (req, res) => {
   }
 };
 
-module.exports = { createUser, getUser, createTicket };
+
+module.exports = { createUser, getUser, createTicket};
 
 
 /*

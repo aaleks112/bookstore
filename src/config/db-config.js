@@ -1,8 +1,6 @@
 const { Sequelize} = require('sequelize');    //1) 
 
 
-
-
 // Option 2: Passing parameters separately (sqlite)
 const sequelize = new Sequelize({
   dialect: "sqlite",

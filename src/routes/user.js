@@ -1,9 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const { userController } = require("../controllers");
+const { jwtValidMDW, userIsAdminMDW } = require("../middleware/auth-mdw");
 
-router.post("/", userController.createUser);
-// router.get("/:userId", userController.getUser);
-// router.post("/:userId/ticket", userController.createTicket);
+
+router.post("/", userIsAdminMDW,  userController.createUser);
+router.get("/:userId", jwtValidMDW, userController.getUser);  //1)
+router.post("/:userId/ticket", userController.createTicket);
 
 module.exports = router;
+
+/*
+1) el nombre que coloquemos en el get debera ser el mismo que pase en la fx :userId
+*/
