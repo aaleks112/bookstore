@@ -1,4 +1,4 @@
-const { all } = require("axios");
+const { op } = require("axios");
 const { User, Ticket} = require("../models");
 
 const createUser = async (user) => {

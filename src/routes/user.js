@@ -6,7 +6,7 @@ const { jwtValidMDW, userIsAdminMDW } = require("../middleware/auth-mdw");
 
 router.post("/", userIsAdminMDW,  userController.createUser);
 router.get("/:userId", jwtValidMDW, userController.getUser);  //1)
-router.post("/:userId/ticket", userController.createTicket);
+
 
 module.exports = router;
 

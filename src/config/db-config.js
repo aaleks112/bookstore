@@ -20,7 +20,6 @@ const sequelize = new Sequelize({
 };
 
 
-
   module.exports = {sequelize, initializeDB}   //3)
 
 

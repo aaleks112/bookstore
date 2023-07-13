@@ -1,9 +1,9 @@
 const express = require("express");
 
-const { userRouter, authRouter } = require("./src/routes");
+const { userRouter, authRouter, libraryRouter } = require("./src/routes");
 const { initializeDB } = require("./src/config/db-config");
 
-const PORT = 8091;
+const PORT = 8090;
 
 
 const app = express();
@@ -17,6 +17,7 @@ app.use("/user", userRouter);
 app.use("/user/:userId", userRouter);
 app.use("/login", authRouter);
 
+app.use("/library", libraryRouter);
 
 
 
