@@ -75,16 +75,6 @@ const deleteLibrary = async (libraryId) => {
   }
 };
 
-const createBook = async (libraryId, book) => {
-  try {
-    const newBook = await Book.create({ ...book, lib: libraryId});
-    return newBook ;
-  } catch (err) {
-    console.error("Error when creating Book", err);
-    throw err;
-  }
-};
-
 
 const validateUser = async (options) => {
   try {
@@ -110,6 +100,5 @@ module.exports = {
     getAllLibraries, 
     updateLibrary,
     deleteLibrary,
-    createBook,
     validateUser 
 };

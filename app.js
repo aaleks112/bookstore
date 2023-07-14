@@ -1,6 +1,6 @@
 const express = require("express");
 
-const { userRouter, authRouter, libraryRouter } = require("./src/routes");
+const { userRouter, authRouter, libraryRouter, bookRouter } = require("./src/routes");
 const { initializeDB } = require("./src/config/db-config");
 
 const PORT = 8090;
@@ -18,6 +18,8 @@ app.use("/user/:userId", userRouter);
 app.use("/login", authRouter);
 
 app.use("/library", libraryRouter);
+
+app.use("/book", bookRouter);
 
 
 

@@ -5,4 +5,9 @@ Estructura base:
 2) SERVICES: Encontramos la logica de negocio (no sabe que existe sequelize) para ello requiero los al providers (que es el que sabe crear al usuario)
 3) PROVIDERS: Define las acciones a realizar en nuestro modelo. Se encarga de la llamada a servicios externos(nuestra BBDD).Es el único que conoce sequelize.no tiene lógica de negocio. Requiere de la capa models.
 4) MODELS: P/crear,definir nuestros datos, como se van a representar.
-5) ROUTES: Rutas definidas con el objeto router p/q cada archivo corresponda a un área específica de la API - en el archivo de la app tenemos definidas las rutas principales 
+5) ROUTES: Rutas definidas con el objeto router p/q cada archivo corresponda a un área específica de la API - en el archivo de la app tenemos definidas las rutas principales.
+
+
+Modulo auth: se crea user admin pass:admin
+El libro se crea desde Book, se le pasa ID por req.body de la librería
+

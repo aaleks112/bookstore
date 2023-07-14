@@ -58,22 +58,5 @@ const deleteLibrary = async (req, res) => {
 };
 
 
-
-const createBook = async (req, res) => {
-  try {
-    const book = await userService.createBook(req.params.libraryId, req.body);
-    if (!book) {
-      res.status(404).json({ action: "createBook", error: "Library Not Found" });
-    } else {
-      res.json(book);
-    }
-  } catch (err) {
-    res.status(500).json({ action: "createBook", error: err.message });
-  }
-};
-
-
-
-
-module.exports = { createLibrary , getLibrary, getAllLibraries, updateLibrary, deleteLibrary, createBook };
+module.exports = { createLibrary , getLibrary, getAllLibraries, updateLibrary, deleteLibrary };
 

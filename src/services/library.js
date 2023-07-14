@@ -1,4 +1,4 @@
-const { libraryProvider } = require("../providers"); //llamo al providers que es el encargado de crear usuarios
+const { libraryProvider } = require("../providers"); 
 
 
 const createLibrary = async (library) => {
@@ -39,17 +39,6 @@ const updateLibrary = async (libraryId, updatedData) => {
 };
 
 
-const deleteLibraryOld = async (libraryId) => {
-  const library = await libraryProvider.getLibrary(libraryId);
-  
-  if (!library) {
-    throw new Error(`Library with ID ${libraryId} not found`);
-  }
-  
-  await libraryProvider.deleteLibrary(libraryId);
-  console.log('Library deleted:', library.name);
-};
-
 const deleteLibrary = async (libraryId) => {
   const library = await libraryProvider.getLibrary(libraryId);
   
@@ -60,7 +49,7 @@ const deleteLibrary = async (libraryId) => {
   await libraryProvider.deleteLibrary(libraryId);
   console.log('Library deleted:', library.name);
   
-  return { message: 'Library deleted successfully' }; // Agregar mensaje de éxito
+  return { message: 'Library deleted successfully' }; // Agrega mensaje de éxito
 };
 
 
@@ -72,7 +61,7 @@ const validateUser = async (user, pass) => {
 };
 
 const createBook = async (libraryId, book) => {
-  const library = await libraryProvider.getLibrary (libraryId);
+  const library = await libraryProvider.getLibrary(libraryId);
   if (library) {
     const newBook = await libraryProvider.createBook (libraryId, book);
     return newBook;

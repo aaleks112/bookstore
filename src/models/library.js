@@ -21,15 +21,11 @@ const Library = sequelize.define("Librarys", {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  status: {                         //true active, false:removed
-  type: DataTypes.BOOLEAN,
-  allowNull: false,
-  defaultValue:true
-},
-  paranoid: true // Habilita el borrado lógico (data provista por compañero en Slack)
+
+  paranoid: true // Borrado lógico (data mencionada en Slack)
 });
 
 Library.hasMany(Book);
-Book.belongsTo(Library);
+// Book.belongsTo(Library);
 
 module.exports = Library;

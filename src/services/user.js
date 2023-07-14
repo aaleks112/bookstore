@@ -1,4 +1,4 @@
-const { userProvider } = require("../providers"); //llamo al providers que es el encargado de crear usuarios
+const { userProvider } = require("../providers"); 
 
 
 
@@ -20,16 +20,9 @@ const validateUser = async (user, pass) => {
   return userFound;
 };
 
-const createTicket = async (userId, ticket) => {
-  const user = await userProvider.getUser(userId);
-  if (user) {
-    const newTicket = await userProvider.createTicket(userId, ticket);
-    return newTicket;
-  }
-  return null;
-};
 
-module.exports = { createUser, getUser, createTicket, validateUser};
+
+module.exports = { createUser, getUser, validateUser};
 
 
 

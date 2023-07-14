@@ -27,9 +27,8 @@ const Book = sequelize.define("Books", {
   },
   library: {
     type: DataTypes.INTEGER,
-    allowNull: true,
+    allowNull: false,
   },
-
 });
 
 module.exports = Book;
